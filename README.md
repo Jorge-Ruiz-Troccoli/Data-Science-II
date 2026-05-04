@@ -19,9 +19,9 @@
 
 | Clase | Tema |
 |-------|------|
-| [Clase 002](./Clase%20001) | SQL primera parte |
-| [Clase 003](./Clase%20002) | SQL segunda parte |
-| [Clase 001](./Clase%20003) | Python-SQL |
+| [Clase 001](./Clase%20001) | SQL primera parte |
+| [Clase 002](./Clase%20002) | SQL segunda parte |
+| [Clase 003](./Clase%20003) | Python-SQL |
 | [Clase 004](./Clase%20004) | Introdución a las APIs |
 | [Clase 005](./Clase%20005) | Data Wrangling |
 | [Clase 006](./Clase%20006) | EDA |
