@@ -19,7 +19,7 @@
 
 | Clase | Tema |
 |-------|------|
-| [Clase 001]([./Clase%20001](https://jorge-ruiz-troccoli.github.io/Data-Science-II/Clase%20001/sqlite_scripts.html) | SQL primera parte |
+| [Clase 001](https://jorge-ruiz-troccoli.github.io/Data-Science-II/Clase%20001/sqlite_scripts.html) | SQL primera parte |
 | [Clase 002](./Clase%20002) | SQL segunda parte |
 | [Clase 003](./Clase%20003) | Python-SQL |
 | [Clase 004](./Clase%20004) | Introdución a las APIs |
