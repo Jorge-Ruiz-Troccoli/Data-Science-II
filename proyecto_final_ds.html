@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Final · Data Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0f0f10;
+    color: #f0ede8;
+    min-height: 100vh;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    background: #1a1a1c;
+    border: 0.5px solid #2e2e30;
+    border-radius: 16px;
+    padding: 2.5rem 2rem 2rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 9rem;
+    font-weight: 800;
+    line-height: 0.85;
+    color: #D85A30;
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+    opacity: 0.18;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(216,90,48,0.15);
+    color: #F0997B;
+    border: 0.5px solid rgba(216,90,48,0.35);
+    border-radius: 100px;
+    padding: 4px 12px;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    color: #f0ede8;
+  }
+
+  .hero p {
+    font-size: 0.92rem;
+    color: #888780;
+    font-weight: 300;
+    line-height: 1.65;
+    max-width: 520px;
+  }
+
+  /* GRID */
+  .sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-card {
+    background: #16161a;
+    border: 0.5px solid #2a2a2d;
+    border-radius: 16px;
+    padding: 1.25rem 1.25rem 1rem;
+    transition: border-color 0.15s;
+  }
+
+  .section-card:hover { border-color: #3e3e42; }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .card-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #f0ede8;
+    line-height: 1.3;
+  }
+
+  .card-subtitle {
+    font-size: 0.76rem;
+    color: #555552;
+    margin-top: 2px;
+    font-weight: 300;
+  }
+
+  .items-list { display: flex; flex-direction: column; gap: 6px; }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.81rem;
+    color: #888780;
+    line-height: 1.5;
+  }
+
+  .item strong { font-weight: 500; color: #b0ada8; }
+
+  .item-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .divider {
+    height: 0.5px;
+    background: #2a2a2d;
+    margin: 0.9rem 0;
+  }
+
+  .tag {
+    display: inline-flex;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 100px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* FOOTER */
+  .footer-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: #1a1a1c;
+    border: 0.5px solid #2e2e30;
+    border-radius: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .footer-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555552;
+  }
+
+  .footer-desc {
+    font-size: 0.76rem;
+    color: #555552;
+    margin-top: 2px;
+  }
+
+  .steps-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+  .step-pill {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+    border: 0.5px solid;
+    letter-spacing: 0.03em;
+  }
+
+  .sep { font-size: 0.75rem; color: #3e3e42; }
+
+  /* Color tokens — dark mode */
+  .c-coral-num  { background: rgba(216,90,48,.18);  color: #F0997B; }
+  .c-teal-num   { background: rgba(29,158,117,.18); color: #5DCAA5; }
+  .c-purple-num { background: rgba(127,119,221,.18);color: #AFA9EC; }
+  .c-amber-num  { background: rgba(186,117,23,.18); color: #EF9F27; }
+  .c-blue-num   { background: rgba(55,138,221,.18); color: #85B7EB; }
+  .c-pink-num   { background: rgba(212,83,126,.18); color: #ED93B1; }
+
+  .c-coral-dot  { background: #D85A30; }
+  .c-teal-dot   { background: #1D9E75; }
+  .c-purple-dot { background: #7F77DD; }
+  .c-amber-dot  { background: #EF9F27; }
+  .c-blue-dot   { background: #378ADD; }
+  .c-pink-dot   { background: #D4537E; }
+
+  .tag-coral  { background: rgba(216,90,48,.12);  color: #F0997B;  border: 0.5px solid rgba(216,90,48,.3); }
+  .tag-amber  { background: rgba(186,117,23,.12); color: #EF9F27;  border: 0.5px solid rgba(186,117,23,.3); }
+  .tag-pink   { background: rgba(212,83,126,.12); color: #ED93B1;  border: 0.5px solid rgba(212,83,126,.3); }
+
+  .step-coral  { background: rgba(216,90,48,.12);  color: #F0997B;  border-color: rgba(216,90,48,.3); }
+  .step-amber  { background: rgba(186,117,23,.12); color: #EF9F27;  border-color: rgba(186,117,23,.3); }
+  .step-blue   { background: rgba(55,138,221,.12); color: #85B7EB;  border-color: rgba(55,138,221,.3); }
+  .step-pink   { background: rgba(212,83,126,.12); color: #ED93B1;  border-color: rgba(212,83,126,.3); }
+  .step-teal   { background: rgba(29,158,117,.12); color: #5DCAA5;  border-color: rgba(29,158,117,.3); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-number">DS</div>
+    <div class="hero-badge">Proyecto Final · Data Science</div>
+    <h1>Estructurando un proyecto<br>de Data Science</h1>
+    <p>Componentes esenciales y flujo de trabajo para la entrega final. Seguí cada sección para armar un proyecto profesional, reproducible y bien comunicado.</p>
+  </div>
+
+  <div class="sections-grid">
+
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-num c-coral-num">01</div>
+        <div>
+          <div class="card-title">Resumen y Objetivos</div>
+          <div class="card-subtitle">El punto de partida del proyecto</div>
+        </div>
+      </div>
+      <div class="items-list">
+        <div class="item"><div class="item-dot c-coral-dot"></div><span><strong>Resumen</strong> — descripción concisa de contenido y hallazgos clave</span></div>
+        <div class="item"><div class="item-dot c-coral-dot"></div><span><strong>Objetivo</strong> — qué se desea resolver con el análisis o modelo</span></div>
+        <div class="item"><div class="item-dot c-coral-dot"></div><span><strong>Contexto comercial</strong> — empresa y posición frente al objetivo (puede ser imaginativo)</span></div>
+        <div class="item"><div class="item-dot c-coral-dot"></div><span><strong>Abstracto</strong> — motivación, audiencia y alto nivel del análisis elegido</span></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-num c-teal-num">02</div>
+        <div>
+          <div class="card-title">Definición del Negocio</div>
+          <div class="card-subtitle">Bases antes de la ejecución técnica</div>
+        </div>
+      </div>
+      <div class="items-list">
+        <div class="item"><div class="item-dot c-teal-dot"></div><span><strong>Definición del proyecto</strong> — alcance, resultados esperados, métricas de negocio</span></div>
+        <div class="item"><div class="item-dot c-teal-dot"></div><span><strong>Antecedentes</strong> — modelos previos y unidad de observación</span></div>
+        <div class="item"><div class="item-dot c-teal-dot"></div><span><strong>Problema a resolver</strong> — encuadrarlo como clasificación o regresión</span></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-num c-purple-num">03</div>
+        <div>
+          <div class="card-title">Hipótesis de Trabajo</div>
+          <div class="card-subtitle">Suposiciones a probar o refutar</div>
+        </div>
+      </div>
+      <div class="items-list">
+        <div class="item"><div class="item-dot c-purple-dot"></div><span><strong>Correlación</strong> — relación causal sugerida entre factores X e Y</span></div>
+        <div class="item"><div class="item-dot c-purple-dot"></div><span><strong>Clasificación</strong> — modelo capaz de clasificar instancias por atributos</span></div>
+        <div class="item"><div class="item-dot c-purple-dot"></div><span><strong>Regresión</strong> — predicción del valor futuro de variable objetivo con datos históricos</span></div>
+        <div class="item"><div class="item-dot c-purple-dot"></div><span><strong>Agrupamiento</strong> — identificación de patrones ocultos mediante clústeres</span></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-num c-amber-num">04</div>
+        <div>
+          <div class="card-title">EDA — Análisis Exploratorio</div>
+          <div class="card-subtitle">Entender el dataset en profundidad</div>
+        </div>
+      </div>
+      <div class="items-list">
+        <div class="item"><div class="item-dot c-amber-dot"></div><span><strong>Adquisición</strong> — carga, tipos de datos, merges y agrupaciones</span></div>
+        <div class="item"><div class="item-dot c-amber-dot"></div><span><strong>Exploración</strong> — análisis descriptivo univariado, bivariado y multivariado</span></div>
+        <div class="item"><div class="item-dot c-amber-dot"></div><span><strong>Visualización</strong> — relaciones, outliers y valores faltantes (NaN)</span></div>
+        <div class="item"><div class="item-dot c-amber-dot"></div><span><strong>Aprendizajes</strong> — insights iniciales y conclusiones preliminares</span></div>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <span class="tag tag-amber">Tendencia central</span>
+        <span class="tag tag-amber">Varianza</span>
+        <span class="tag tag-amber">Asimetría</span>
+        <span class="tag tag-amber">Correlación</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-num c-blue-num">05</div>
+        <div>
+          <div class="card-title">Preprocesamiento</div>
+          <div class="card-subtitle">Feature engineering e ingeniería de atributos</div>
+        </div>
+      </div>
+      <div class="items-list">
+        <div class="item"><div class="item-dot c-blue-dot"></div><span><strong>Limpieza</strong> — tipos de datos, valores ausentes y atípicos</span></div>
+        <div class="item"><div class="item-dot c-blue-dot"></div><span><strong>Criterio experto</strong> — selección fundamentada de variables antes del modelo</span></div>
+        <div class="item"><div class="item-dot c-blue-dot"></div><span><strong>Feature engineering</strong> — nuevas variables, normalización, encoding, binning</span></div>
+        <div class="item"><div class="item-dot c-blue-dot"></div><span><strong>Dimensionalidad</strong> — optimización del espacio de características</span></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="card-header">
+        <div class="card-num c-pink-num">06</div>
+        <div>
+          <div class="card-title">Modelado y Evaluación</div>
+          <div class="card-subtitle">Mínimo dos algoritmos distintos</div>
+        </div>
+      </div>
+      <div class="items-list">
+        <div class="item"><div class="item-dot c-pink-dot"></div><span><strong>Entrenamiento</strong> — ≥2 algoritmos de clasificación o regresión vistos en el curso</span></div>
+        <div class="item"><div class="item-dot c-pink-dot"></div><span><strong>Optimización</strong> — hiperparámetros con GridSearch halving</span></div>
+        <div class="item"><div class="item-dot c-pink-dot"></div><span><strong>Validación</strong> — validación cruzada para robustez del modelo</span></div>
+        <div class="item"><div class="item-dot c-pink-dot"></div><span><strong>Métricas</strong> — selección del mejor modelo según tarea</span></div>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <span class="tag tag-pink">Accuracy</span>
+        <span class="tag tag-pink">RMSE</span>
+        <span class="tag tag-pink">F1</span>
+        <span class="tag tag-pink">Recall</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-strip">
+    <div>
+      <div class="footer-label">Flujo de entrega</div>
+      <div class="footer-desc">Completá los 5 puntos del notebook para un proyecto completo y profesional</div>
+    </div>
+    <div class="steps-row">
+      <span class="step-pill step-coral">Resumen</span>
+      <span class="sep">→</span>
+      <span class="step-pill step-amber">EDA</span>
+      <span class="sep">→</span>
+      <span class="step-pill step-blue">Variables</span>
+      <span class="sep">→</span>
+      <span class="step-pill step-pink">Modelo</span>
+      <span class="sep">→</span>
+      <span class="step-pill step-teal">Conclusiones</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
