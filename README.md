@@ -20,7 +20,7 @@
 | Clase | Tema |
 |-------|------|
 | [Clase 001](./Clase%20001) | SQL primera parte — [Scripts SQLite](https://jorge-ruiz-troccoli.github.io/Data-Science-II/Docs/sqlite_scripts.html) |
-| [Clase 002](./Clase%20002) | SQL segunda parte |
+| [Clase 002](./Clase%20002) | SQL segunda parte — [Scripts SQLite](https://jorge-ruiz-troccoli.github.io/Data-Science-II/Docs/sqlite_case_agrupaciones.html) |
 | [Clase 003](./Clase%20003) | Python-SQL |
 | [Clase 004](./Clase%20004) | Introdución a las APIs |
 | [Clase 005](./Clase%20005) | Data Wrangling |
