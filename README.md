@@ -35,7 +35,7 @@
 | [Clase 014](./Clase%20014) | Cross-validation y tuning de hiperparámetros |
 | [Clase 015](./Clase%20015) | Profundizando en regresiones |
 | [Clase 016](./Clase%20016) | Modelos de Boosting |
-| [Proyecto Final](https://jorge-ruiz-troccoli.github.io/Data-Science-II/code.html) | Proyecto Final Data Science II |
+| [Proyecto Final](https://jorge-ruiz-troccoli.github.io/Data-Science-II/Docs/code_proyecto.html) | Proyecto Final Data Science II |
 
 > ⚠️ *Los temas se profundizan durante las 2 horas de cada clase.*
 
