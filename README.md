@@ -63,7 +63,7 @@
 
 ---
 
-## 🧔 Autor: *Jorge Ruiz Troccoli*
+## Autor: *Jorge Ruiz Troccoli*
 
   
 [![GitHub](https://img.shields.io/badge/GitHub-Jorge--Ruiz--Troccoli-181717?style=flat&logo=github)](https://github.com/Jorge-Ruiz-Troccoli)
